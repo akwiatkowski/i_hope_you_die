@@ -180,6 +180,8 @@ class IHopeYouDie
         h[:operation_time] = $1
       end
     end
+
+    return h
   end
 
   def check_pesels(pesels)
