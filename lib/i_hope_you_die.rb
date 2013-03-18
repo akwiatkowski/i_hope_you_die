@@ -130,10 +130,7 @@ class IHopeYouDie
 
   def cwu_for_pesel(pesel)
     #puts "PESEL #{pesel}"
-
     xml = cwu_xml(pesel)
-
-    puts "\n\n\n\n#{xml}\n\n\n"
 
     client = Savon::Client.new(wsdl: wsdl_brok)
     Savon::Builder.forced_output = xml
@@ -180,6 +177,8 @@ class IHopeYouDie
         h[:operation_time] = $1
       end
     end
+
+    h[:doc] = s
 
     return h
   end
